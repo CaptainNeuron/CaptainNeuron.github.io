@@ -124,7 +124,70 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>TEST</p>
+                <p>We develop a roguelike mobile game with  procedural generated game maps every time you start the game. </p>
+<p>Every time the game is on, players will face different challenges. Your goal will change based on the number of players. Sometimes you need to fight with your friends but sometimes players need to cooperate to fight the monster and explore.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/YSXqf3pz/Map1.gif">
+</div>
+
+
+<h2 id="Instruction"><a href="#Instruction" class="headerlink" title="Instruction"></a>Instruction</h2><div style="text-align: center">
+<img src="https://i.postimg.cc/HsjkPp1Q/help.gif">
+</div>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/t4xCp2TJ/role-rotation.gif">
+</div>
+
+
+
+<h2 id="Procedural-Generation"><a href="#Procedural-Generation" class="headerlink" title="Procedural Generation"></a>Procedural Generation</h2><p>I made a program to randomly generate the game scene I need. I manage to generate the game scenes and various items, monsters, treasure chests, and other objects.</p>
+<p>First, I generate the room space. There are two methods. One is to generate regular rooms and the other one is to generate irregular rooms.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/QCz9nC6y/regular.gif">
+<title>generate regular rooms</title>
+<td align="center">generate regular rooms</td>
+</div>
+<br>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/zD2gf2JF/irregular.gif">
+<title>generate irregular rooms</title>
+<td align="center">generate irregular rooms</td>
+</div>
+
+<p>Then I fill the rooms with items using templates.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/ncWDJBNz/room.png">
+</div>
+
+
+<h2 id="Combat"><a href="#Combat" class="headerlink" title="Combat"></a>Combat</h2><p>You may need to use your weapon to fight against monsters.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/rFdtRGsX/Gun.gif">
+<title>fight against monsters</title>
+<td align="center">fight against monsters</td>
+</div>
+
+<p>You may need to fight against other players.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/2Shb2zn0/Net.gif">
+<title>fight against players</title>
+<td align="center">fight against players</td>
+</div>
+
+<h2 id="Monster-AI"><a href="#Monster-AI" class="headerlink" title="Monster AI"></a>Monster AI</h2><p>The program that control the monsters are relatively simple. We use  automata to control the monsters. Monsters will automatically chase the players when they approach. We use A* search algorithm to help them find their way.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/Xq10rwC1/a-star-alg-small.gif">
+<title>A* algorithm</title>
+<td align="center">A* algorithm</td>
+</div>
+<br>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/NfW26y2y/A-star.gif">
+<title>the monster chasing the player</title>
+<td align="center">the monster chasing the player</td>
+</div>
+
+<h2 id="My-Story"><a href="#My-Story" class="headerlink" title="My Story"></a>My Story</h2><p>//todo:</p>
 
             </div>
 
