@@ -127,7 +127,7 @@
                 <p>We develop a roguelike mobile game with  procedural generated game maps every time you start the game. </p>
 <p>Every time the game is on, players will face different challenges. Your goal will change based on the number of players. Sometimes you need to fight with your friends but sometimes players need to cooperate to fight the monster and explore.</p>
 <div style="text-align: center">
-<img src="https://i.postimg.cc/YSXqf3pz/Map1.gif">
+<img src="https://i.postimg.cc/R0dMbC4m/Map2.gif">
 </div>
 
 
@@ -140,18 +140,49 @@
 
 
 
-<h2 id="Procedural-Generation"><a href="#Procedural-Generation" class="headerlink" title="Procedural Generation"></a>Procedural Generation</h2><p>I made a program to randomly generate the game scene I need. I manage to generate the game scenes and various items, monsters, treasure chests, and other objects.</p>
+<h2 id="Procedural-Generation"><a href="#Procedural-Generation" class="headerlink" title="Procedural Generation"></a>Procedural Generation</h2><p>We use a program to generate the map of the game. Everytime you start the game, you get a unique experience.</p>
+<h2 id="Combat"><a href="#Combat" class="headerlink" title="Combat"></a>Combat</h2><p>You may need to use your weapon to fight against monsters.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/rFdtRGsX/Gun.gif">
+<title>fight against monsters</title>
+<div>fight against monsters</div>
+</div>
+
+<p>You may need to fight against other players.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/2Shb2zn0/Net.gif">
+<title>fight against players</title>
+<div>fight against players</div>
+</div>
+
+<h2 id="Monster-AI"><a href="#Monster-AI" class="headerlink" title="Monster AI"></a>Monster AI</h2><p>The program that control the monsters are relatively simple. We use  automata to control the monsters. Monsters will automatically chase the players when they approach. We use A* search algorithm to help them find their way.</p>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/Xq10rwC1/a-star-alg-small.gif">
+<title>A* algorithm</title>
+<div>A* algorithm</div>
+</div>
+<br>
+<div style="text-align: center">
+<img src="https://i.postimg.cc/NfW26y2y/A-star.gif">
+<title>the monster chasing the player</title>
+<div>the monster chasing the player</div>
+</div>
+
+<h2 id="My-Story"><a href="#My-Story" class="headerlink" title="My Story"></a>My Story</h2><p>I want to made a sequel of my first game. I started a team, and I found a student who is good at art. So in this project, I did not focus on drawing. I discussed with the new menber about what kind of art material I want and she did a great job.</p>
+<p>We decide to made a roguelike game and in my view, the most important thing about a roguelike game is the randomness of its scene. The point is to generate a different, random map for players to explore. So procedural generation is the first thing here. </p>
+<p>At first, I tried to generate the room totally randomly and then I found all the rooms messy. They look too strange and abnormal. That’s why I develop a method to auto-generate well-arranged rooms. </p>
+<p>I made a program to randomly generate the game scene I need. I manage to generate the game scenes and various items, monsters, treasure chests, and other objects.</p>
 <p>First, I generate the room space. There are two methods. One is to generate regular rooms and the other one is to generate irregular rooms.</p>
 <div style="text-align: center">
 <img src="https://i.postimg.cc/QCz9nC6y/regular.gif">
 <title>generate regular rooms</title>
-<td align="center">generate regular rooms</td>
+<div>generate regular rooms</div>
 </div>
 <br>
 <div style="text-align: center">
 <img src="https://i.postimg.cc/zD2gf2JF/irregular.gif">
 <title>generate irregular rooms</title>
-<td align="center">generate irregular rooms</td>
+<div>generate irregular rooms</div>
 </div>
 
 <p>Then I fill the rooms with items using templates.</p>
@@ -159,35 +190,16 @@
 <img src="https://i.postimg.cc/ncWDJBNz/room.png">
 </div>
 
-
-<h2 id="Combat"><a href="#Combat" class="headerlink" title="Combat"></a>Combat</h2><p>You may need to use your weapon to fight against monsters.</p>
+<p> Then I made dozens of room templates which indicate what kind of object should be generated and where they should be in a given room space.</p>
+<p>For example:</p>
 <div style="text-align: center">
-<img src="https://i.postimg.cc/rFdtRGsX/Gun.gif">
-<title>fight against monsters</title>
-<td align="center">fight against monsters</td>
+<img src="https://i.postimg.cc/nLfbxXn7/room-template.png">
+<title>room template</title>
+<div>room template</div>
 </div>
 
-<p>You may need to fight against other players.</p>
-<div style="text-align: center">
-<img src="https://i.postimg.cc/2Shb2zn0/Net.gif">
-<title>fight against players</title>
-<td align="center">fight against players</td>
-</div>
-
-<h2 id="Monster-AI"><a href="#Monster-AI" class="headerlink" title="Monster AI"></a>Monster AI</h2><p>The program that control the monsters are relatively simple. We use  automata to control the monsters. Monsters will automatically chase the players when they approach. We use A* search algorithm to help them find their way.</p>
-<div style="text-align: center">
-<img src="https://i.postimg.cc/Xq10rwC1/a-star-alg-small.gif">
-<title>A* algorithm</title>
-<td align="center">A* algorithm</td>
-</div>
-<br>
-<div style="text-align: center">
-<img src="https://i.postimg.cc/NfW26y2y/A-star.gif">
-<title>the monster chasing the player</title>
-<td align="center">the monster chasing the player</td>
-</div>
-
-<h2 id="My-Story"><a href="#My-Story" class="headerlink" title="My Story"></a>My Story</h2><p>//todo:</p>
+<p>Here shows a template for a 11x11 room. Green blocks are where monsters will appear, red blocks are simply barriers, yellow blocks are treasure chests and purple blocks are other objects. If the program randomly choose this template to apply for a 11x11 space, then some barrers, could be a desk or a bed will appear in the red blocks and it is the same for other type of objects.</p>
+<p>When we started working on the multiplay part, we realized that we have to change the whole structure of the game which means some code have to be rewrite. It is quite a lesson. I should have thought about it before I started.</p>
 
             </div>
 
